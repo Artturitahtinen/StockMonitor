@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import sys
-import Services.LoggingService
+import Services.LoggingService as LoggingService
 
 class Request_parse_service:
 
@@ -17,7 +17,7 @@ class Request_parse_service:
         try:
             requests.get(self.url)
         except requests.ConnectionError:
-            Services.LoggingService.('Connection error')   
+            LoggingService.logging.exception('Connection error: ')
 
         self.driver.get(self.url)
         page_source = self.driver.page_source
@@ -27,20 +27,20 @@ class Request_parse_service:
         if(Request_parse_service.parse_requests == 1):
             try:
                 accept_button_selector = self.driver.find_element_by_id('almacmp-modalConfirmBtn').click()
-            except:
-                print("Did not find accept button, exiting program")
+            except NoSuchElementException:
+                LoggingService.logging.exception('Did not find accept button, exiting program')
                 sys.exit()
 
         time.sleep(2)
         try:
             sell_price_label = self.driver.find_elements_by_class_name('card-label')[3].get_attribute('innerHTML')
         except:
-            print("Did not find sell price label, exiting program")
+            LoggingService.logging.exception('Did not find sell price label, exiting program')
             sys.exit()
         try:
             sell_price = self.driver.find_elements_by_class_name('card-value')[5].find_elements_by_class_name('monospace')[0].get_attribute('innerHTML')
         except:  
-            print("Did not find sell price, exiting program")
+            LoggingService.logging.exception('Did not find sell price, exiting program')
             sys.exit()  
 
         sell_price = sell_price.replace(',', '.')
