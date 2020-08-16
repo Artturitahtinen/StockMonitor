@@ -22,11 +22,11 @@ def main():
         sell_price = rps.parse_request()
         sell_prices.append(sell_price)
 
-    make_dict()
+    stock_dict = make_dict()
+    
 
 def make_dict():
     companies_sell_prices = dict(zip(companies_sell_labels, sell_prices))
-    print(companies_sell_prices)
 
 if __name__ == "__main__":
     main()

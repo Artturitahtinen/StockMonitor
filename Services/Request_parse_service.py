@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import sys
+import Services.LoggingService
 
 class Request_parse_service:
 
@@ -16,7 +17,7 @@ class Request_parse_service:
         try:
             requests.get(self.url)
         except requests.ConnectionError:
-            print('Connection error')   
+            Services.LoggingService.('Connection error')   
 
         self.driver.get(self.url)
         page_source = self.driver.page_source
