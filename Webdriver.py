@@ -7,5 +7,5 @@ class Webdriver:
 
 
     def initializeChromeWebDriver(self):
-        driver = webdriver.Chrome('D://Python projects//StockMonitor//chromedriver_win32chromedriver.exe')
+        driver = webdriver.Chrome(executable_path='D:/Python projects/StockMonitor/chromedriver_win32/chromedriver.exe')
         return driver

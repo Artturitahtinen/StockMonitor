@@ -3,13 +3,16 @@ from bs4 import BeautifulSoup
 import time
 import sys
 
-class RequestParseService:
+class Request_parse_service:
+
+    parse_requests = 0
 
     def __init__(self, url, driver):
         self.url = url
         self.driver = driver
+        Request_parse_service.parse_requests += 1
 
-    def parseRequest(self):
+    def parse_request(self):
         try:
             requests.get(self.url)
         except requests.ConnectionError:
@@ -19,11 +22,13 @@ class RequestParseService:
         page_source = self.driver.page_source
         soup = BeautifulSoup(page_source, 'lxml')
         time.sleep(2)
-        try:
-            accept_button_selector = self.driver.find_element_by_id('almacmp-modalConfirmBtn').click()
-        except:
-            print("Did not find accept button, exiting program")
-            sys.exit()
+
+        if(Request_parse_service.parse_requests == 1):
+            try:
+                accept_button_selector = self.driver.find_element_by_id('almacmp-modalConfirmBtn').click()
+            except:
+                print("Did not find accept button, exiting program")
+                sys.exit()
 
         time.sleep(2)
         try:
@@ -31,12 +36,13 @@ class RequestParseService:
         except:
             print("Did not find sell price label, exiting program")
             sys.exit()
-
         try:
             sell_price = self.driver.find_elements_by_class_name('card-value')[5].find_elements_by_class_name('monospace')[0].get_attribute('innerHTML')
         except:  
             print("Did not find sell price, exiting program")
             sys.exit()  
 
-        print(sell_price_label)
-        print(sell_price)
+        sell_price = sell_price.replace(',', '.')
+        sell_price = float(sell_price)
+        return sell_price
+
