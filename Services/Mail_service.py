@@ -1,25 +1,48 @@
 import smtplib, ssl
+import configparser
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from jinja2 import Template
+from flask import render_template
+import sys
+sys.path.insert(1, 'D:/Python projects/StockMonitor')
+import Templates.Email_template
+
+config= configparser.ConfigParser()
+config.read(r'D:/Python projects/StockMonitor/Configs/config.ini')
+
+sender_email = config['MAIL']['sender_email']
+password = config['MAIL']['password']
+recipient_email = config['MAIL']['recipient_email']
+smtp_server = config['MAIL']['smtp_server']
+port = config['MAIL']['port']
 
 
 class Mail_service:
 
-    def __init__(self, stock_dict, sender_email, password, recipient_email, smtp_server, port):
+    def __init__(self, stock_dict):
         self.stock_dict = stock_dict
-        self.sender_email = sender_email
-        self.password = password
-        self.recipient_email = recipient_email
-        self.smtp_server = smtp_server
-        self.port = port
 
     def send_email(self):
+        message = MIMEMultipart("alternative")
+        message["Subject"] = "Stock(s) has risen significantly!"
+        message["From"] = sender_email
+        message["To"] = recipient_email
+        text = """\
+            ei tätä
+            """
+        html = Templates.Email_template.email_template_html
+        t1 = Template(html)
+        html_msg = t1.render(stocks=self.stock_dict)
+
+        part1 = MIMEText(text, 'plain')
+        part2 = MIMEText(html_msg, 'html')
+
+        message.attach(part1)
+        message.attach(part2)
+
         context = ssl.create_default_context()
 
-        with smtplib.SMTP_SSL(self.smtp_server, self.port, context=context) as server:
-            server.login(self.sender_email, self.password)
-            message = """
-            Subject: Stock(s) has risen significantly
-
-            {stock_name} has risen over 50% from purchase price.
-            Current price: {stock_price} €"""
-
-            server.sendmail(self.sender_email, self.recipient_email, message.format(stock_name=stock_name, stock_price=stock_price))
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, recipient_email, message.as_string())

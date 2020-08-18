@@ -1,16 +1,6 @@
 from Services.Request_parse_service import Request_parse_service
 from Webdriver.Webdriver import Webdriver
 from Services.Mail_service import Mail_service
-import numpy as np
-import configparser
-config= configparser.ConfigParser()
-config.read(r'D:/Python projects/StockMonitor/Configs/config.ini')
-
-sender_email = config['MAIL']['sender_email']
-password = config['MAIL']['password']
-recipient_email = config['MAIL']['recipient_email']
-smtp_server = config['MAIL']['smtp_server']
-port = config['MAIL']['port']
 
 stock_urls = {
     'orionB_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/ORNBV',
@@ -19,40 +9,15 @@ stock_urls = {
     'outokumpu_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/OUT1V',
     'sampoA_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/SAMPO'
 }
-companies_sell_labels = ['Orion B sell price','Konecranes sell price','Nordea Bank sell price','Outokumpu','Sampo A']
-sell_prices = []
-increase = [1.40, 1.50, 1.50, 1.50, 1.50]
-target_prices = [55.58, 30.33, 10.22, 3.315, 38.955]
-
 stocks = {
-    'Orion B': {
-        'sell_prices': 0.0,
-        'increase': 0.40,
-        'target_price': 55.58
-    },
-    'Konecranes': {
-        'sell_prices': 0.0,
-        'increase': 0.50,
-        'target_price': 30.33
-    },
-    'Nordea Bank': {
-        'sell_prices': 0.0,
-        'increase': 0.50,
-        'target_price': 10.22
-    },
-    'Outokumpu': {
-        'sell_prices': 0.0,
-        'increase': 0.50,
-        'target_price': 3.315
-    },
-    'Sampo A': {
-        'sell_prices': 0.0,
-        'increase': 0.50,
-        'target_price': 38.955
-    }    
+    'Orion B': {'sell_price': 0.0, 'target_price': 5.58, 'increase': 40, 'increased_over': False},
+    'Konecranes': {'sell_price': 0.0, 'target_price': 3.33, 'increase': 50, 'increased_over': False},
+    'Nordea Bank': {'sell_price': 0.0, 'target_price': 10.22, 'increase': 50, 'increased_over': False},
+    'Outokumpu': {'sell_price': 0.0, 'target_price': 3.315, 'increase': 50, 'increased_over': False},
+    'Sampo A': {'sell_price': 0.0, 'target_price': 38.955, 'increase': 50, 'increased_over': False}    
 }
-
-
+#target_prices = [55.58, 30.33, 10.22, 3.315, 38.955]
+sell_prices = []
 
 def main():
     #Initialize chromedriver
@@ -65,16 +30,31 @@ def main():
         sell_price = rps.parse_request()
         sell_prices.append(sell_price)
 
-    sell_prices_to_dict(sell_prices, stocks)
+    updated_stocks = sell_prices_to_dict(sell_prices, stocks)
+    filtered_stocks = filter_stocks(updated_stocks)
+    is_empty_dict = not bool(filtered_stocks)
 
-    #if(check_mail_send_conditions(sell_prices, target_prices)):
-    #   mail_service = Mail_service(stock_dict, sender_email, recipient_email, smtp_server, port)
-    #   mail_service.send_email()
+    #If stock dictionary is not empty => send email
+    if not is_empty_dict:
+        mail_service = Mail_service(filtered_stocks)
+        mail_service.send_email()
     
 def sell_prices_to_dict(sell_prices, stocks):
-    iter_sell_prices_list = iter(sell_prices)
+    sell_prices_iterator = iter(sell_prices)
     for key, value in stocks.items():
-        print(key, value)
+        value['sell_price'] = next(sell_prices_iterator)
+    return stocks
+
+#Set increased_over to True if sell_price is greater or equal to target_price
+def filter_stocks(updated_stocks):
+    for key, value in updated_stocks.items():
+        if value['sell_price'] >= value['target_price']:
+            value['increased_over'] = True
+
+    #Delete dictionaries where increased_over is False
+    updated_stocks = {k:v for (k, v) in updated_stocks.items() if v['increased_over'] == True}
+    
+    return updated_stocks
 
 if __name__ == "__main__":
     main()
