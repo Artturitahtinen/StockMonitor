@@ -15,9 +15,9 @@ stocks = {
     'Konecranes': {'sell_price': 0.0, 'target_price': 30.33, 'increase': 50, 'increased_over': False},
     'Nordea Bank': {'sell_price': 0.0, 'target_price': 10.22, 'increase': 50, 'increased_over': False},
     'Outokumpu': {'sell_price': 0.0, 'target_price': 3.315, 'increase': 50, 'increased_over': False},
-    'Sampo A': {'sell_price': 0.0, 'target_price': 18.955, 'increase': 50, 'increased_over': False}    
+    'Sampo A': {'sell_price': 0.0, 'target_price': 38.955, 'increase': 50, 'increased_over': False}    
 }
-#target_prices = [55.58, 30.33, 10.22, 3.315, 38.955]
+
 sell_prices = []
 
 def main():
