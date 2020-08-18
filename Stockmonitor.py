@@ -1,6 +1,7 @@
 from Services.Request_parse_service import Request_parse_service
 from Webdriver.Webdriver import Webdriver
 from Services.Mail_service import Mail_service
+import Services.Logging_service as Logging_service
 
 stock_urls = {
     'orionB_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/ORNBV',
@@ -10,11 +11,11 @@ stock_urls = {
     'sampoA_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/SAMPO'
 }
 stocks = {
-    'Orion B': {'sell_price': 0.0, 'target_price': 5.58, 'increase': 40, 'increased_over': False},
-    'Konecranes': {'sell_price': 0.0, 'target_price': 3.33, 'increase': 50, 'increased_over': False},
+    'Orion B': {'sell_price': 0.0, 'target_price': 55.58, 'increase': 40, 'increased_over': False},
+    'Konecranes': {'sell_price': 0.0, 'target_price': 30.33, 'increase': 50, 'increased_over': False},
     'Nordea Bank': {'sell_price': 0.0, 'target_price': 10.22, 'increase': 50, 'increased_over': False},
     'Outokumpu': {'sell_price': 0.0, 'target_price': 3.315, 'increase': 50, 'increased_over': False},
-    'Sampo A': {'sell_price': 0.0, 'target_price': 38.955, 'increase': 50, 'increased_over': False}    
+    'Sampo A': {'sell_price': 0.0, 'target_price': 18.955, 'increase': 50, 'increased_over': False}    
 }
 #target_prices = [55.58, 30.33, 10.22, 3.315, 38.955]
 sell_prices = []
@@ -31,14 +32,16 @@ def main():
         sell_prices.append(sell_price)
 
     updated_stocks = sell_prices_to_dict(sell_prices, stocks)
+    Logging_service.logging.info(updated_stocks)
     filtered_stocks = filter_stocks(updated_stocks)
-    is_empty_dict = not bool(filtered_stocks)
+    empty_dict = not bool(filtered_stocks)
 
     #If stock dictionary is not empty => send email
-    if not is_empty_dict:
+    if not empty_dict:
         mail_service = Mail_service(filtered_stocks)
         mail_service.send_email()
-    
+
+#Update current selling prices to dictionary
 def sell_prices_to_dict(sell_prices, stocks):
     sell_prices_iterator = iter(sell_prices)
     for key, value in stocks.items():

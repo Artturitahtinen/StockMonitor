@@ -3,10 +3,10 @@ import configparser
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from jinja2 import Template
-from flask import render_template
 import sys
 sys.path.insert(1, 'D:/Python projects/StockMonitor')
 import Templates.Email_template
+import Services.Logging_service as Logging_service
 
 config= configparser.ConfigParser()
 config.read(r'D:/Python projects/StockMonitor/Configs/config.ini')
@@ -24,12 +24,13 @@ class Mail_service:
         self.stock_dict = stock_dict
 
     def send_email(self):
+        Logging_service.logging.info('Trying to send email')
         message = MIMEMultipart("alternative")
         message["Subject"] = "Stock(s) has risen significantly!"
         message["From"] = sender_email
         message["To"] = recipient_email
         text = """\
-            ei tätä
+            plain text alternative email message content
             """
         html = Templates.Email_template.email_template_html
         t1 = Template(html)
@@ -43,6 +44,10 @@ class Mail_service:
 
         context = ssl.create_default_context()
 
-        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-            server.login(sender_email, password)
-            server.sendmail(sender_email, recipient_email, message.as_string())
+        try:
+            with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+                server.login(sender_email, password)
+                server.sendmail(sender_email, recipient_email, message.as_string())
+                Logging_service.logging.info('Mail sent successfully')
+        except Exception as e:
+            Logging_service.logging.exception('Error happened: ' + e)
