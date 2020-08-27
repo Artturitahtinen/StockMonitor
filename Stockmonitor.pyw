@@ -34,7 +34,7 @@ def main():
 
     g_driver.quit()
     updated_stocks = sell_prices_to_dict(sell_prices, stocks)
-    Logging_service.logging.info(updated_stocks)
+    Logging_service.log_prices_by_company(updated_stocks)
     filtered_stocks = filter_stocks(updated_stocks)
     empty_dict = not bool(filtered_stocks)
 

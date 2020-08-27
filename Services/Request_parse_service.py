@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import time
 import sys
 import Services.Logging_service as Logging_service
+from selenium.common.exceptions import NoSuchElementException
 
 class Request_parse_service:
 
