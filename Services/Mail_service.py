@@ -44,9 +44,13 @@ class Mail_service:
 
         context = ssl.create_default_context()
 
+        Logging_service.logging.info('Mail template ready')
+
         try:
             with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+                Logging_service.logging.info('Attempting login')
                 server.login(sender_email, password)
+                Logging_service.logging.info('Login to monitoringOmx successful')
                 server.sendmail(sender_email, recipient_email, message.as_string())
                 Logging_service.logging.info('Mail sent successfully')
         except Exception as e:
