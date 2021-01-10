@@ -12,7 +12,7 @@ stock_urls = {
 }
 stocks = {
     'Orion B': {'sell_price': 0.0, 'target_price': 55.58, 'increase': 40, 'increased_over': False},
-    'Konecranes': {'sell_price': 0.0, 'target_price': 30.33, 'increase': 50, 'increased_over': False},
+    'Konecranes': {'sell_price': 0.0, 'target_price': 32.352, 'increase': 60, 'increased_over': False},
     'Nordea Bank': {'sell_price': 0.0, 'target_price': 10.22, 'increase': 50, 'increased_over': False},
     'Outokumpu': {'sell_price': 0.0, 'target_price': 3.757, 'increase': 70, 'increased_over': False},
     'Sampo A': {'sell_price': 0.0, 'target_price': 38.955, 'increase': 50, 'increased_over': False}    
