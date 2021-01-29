@@ -2811,3 +2811,263 @@ Sampo A
    sell price: 35.5 € 
    target price: 38.955 € 
 ---------------------------------
+22.01.2021 08:45:39 - INFO : Script started
+22.01.2021 08:46:21 - INFO : 
+Orion B 
+   sell price: 38.66 € 
+   target price: 55.58 € 
+---------------------------------
+22.01.2021 08:46:21 - INFO : 
+Konecranes 
+   sell price: 32.56 € 
+   target price: 32.352 € 
+---------------------------------
+22.01.2021 08:46:21 - INFO : 
+Nordea Bank 
+   sell price: 7.078 € 
+   target price: 10.22 € 
+---------------------------------
+22.01.2021 08:46:21 - INFO : 
+Outokumpu 
+   sell price: 4.042 € 
+   target price: 3.978 € 
+---------------------------------
+22.01.2021 08:46:21 - INFO : 
+Sampo A 
+   sell price: 35.68 € 
+   target price: 38.955 € 
+---------------------------------
+22.01.2021 08:46:21 - INFO : Trying to send email
+22.01.2021 08:46:21 - INFO : Mail template ready
+22.01.2021 08:46:23 - INFO : Attempting login
+22.01.2021 08:46:23 - INFO : Login to monitoringOmx successful
+22.01.2021 08:46:27 - INFO : Mail sent successfully
+23.01.2021 09:36:35 - INFO : Script started
+23.01.2021 09:37:17 - INFO : 
+Orion B 
+   sell price: 38.57 € 
+   target price: 55.58 € 
+---------------------------------
+23.01.2021 09:37:17 - INFO : 
+Konecranes 
+   sell price: 32.5 € 
+   target price: 32.352 € 
+---------------------------------
+23.01.2021 09:37:17 - INFO : 
+Nordea Bank 
+   sell price: 7.031 € 
+   target price: 10.22 € 
+---------------------------------
+23.01.2021 09:37:17 - INFO : 
+Outokumpu 
+   sell price: 4.03 € 
+   target price: 3.978 € 
+---------------------------------
+23.01.2021 09:37:17 - INFO : 
+Sampo A 
+   sell price: 35.75 € 
+   target price: 38.955 € 
+---------------------------------
+23.01.2021 09:37:17 - INFO : Trying to send email
+23.01.2021 09:37:17 - INFO : Mail template ready
+23.01.2021 09:37:18 - INFO : Attempting login
+23.01.2021 09:37:18 - INFO : Login to monitoringOmx successful
+23.01.2021 09:37:20 - INFO : Mail sent successfully
+23.01.2021 11:58:23 - INFO : Script started
+23.01.2021 11:59:04 - INFO : 
+Orion B 
+   sell price: 38.57 € 
+   target price: 55.58 € 
+---------------------------------
+23.01.2021 11:59:04 - INFO : 
+Konecranes 
+   sell price: 32.5 € 
+   target price: 32.352 € 
+---------------------------------
+23.01.2021 11:59:04 - INFO : 
+Nordea Bank 
+   sell price: 7.031 € 
+   target price: 10.22 € 
+---------------------------------
+23.01.2021 11:59:04 - INFO : 
+Outokumpu 
+   sell price: 4.03 € 
+   target price: 3.978 € 
+---------------------------------
+23.01.2021 11:59:04 - INFO : 
+Sampo A 
+   sell price: 35.75 € 
+   target price: 38.955 € 
+---------------------------------
+23.01.2021 11:59:04 - INFO : Trying to send email
+23.01.2021 11:59:04 - INFO : Mail template ready
+23.01.2021 11:59:06 - INFO : Attempting login
+23.01.2021 11:59:06 - INFO : Login to monitoringOmx successful
+23.01.2021 11:59:08 - INFO : Mail sent successfully
+23.01.2021 06:56:55 - INFO : Script started
+23.01.2021 06:57:37 - INFO : 
+Orion B 
+   sell price: 38.57 € 
+   target price: 55.58 € 
+---------------------------------
+23.01.2021 06:57:37 - INFO : 
+Konecranes 
+   sell price: 32.5 € 
+   target price: 32.352 € 
+---------------------------------
+23.01.2021 06:57:37 - INFO : 
+Nordea Bank 
+   sell price: 7.031 € 
+   target price: 10.22 € 
+---------------------------------
+23.01.2021 06:57:37 - INFO : 
+Outokumpu 
+   sell price: 4.03 € 
+   target price: 3.978 € 
+---------------------------------
+23.01.2021 06:57:37 - INFO : 
+Sampo A 
+   sell price: 35.75 € 
+   target price: 38.955 € 
+---------------------------------
+23.01.2021 06:57:37 - INFO : Trying to send email
+23.01.2021 06:57:37 - INFO : Mail template ready
+23.01.2021 06:57:38 - INFO : Attempting login
+23.01.2021 06:57:39 - INFO : Login to monitoringOmx successful
+23.01.2021 06:57:40 - INFO : Mail sent successfully
+24.01.2021 10:36:52 - INFO : Script started
+24.01.2021 10:37:34 - INFO : 
+Orion B 
+   sell price: 38.57 € 
+   target price: 55.58 € 
+---------------------------------
+24.01.2021 10:37:34 - INFO : 
+Konecranes 
+   sell price: 32.5 € 
+   target price: 34.374 € 
+---------------------------------
+24.01.2021 10:37:34 - INFO : 
+Nordea Bank 
+   sell price: 7.031 € 
+   target price: 10.22 € 
+---------------------------------
+24.01.2021 10:37:34 - INFO : 
+Outokumpu 
+   sell price: 4.03 € 
+   target price: 4.199 € 
+---------------------------------
+24.01.2021 10:37:34 - INFO : 
+Sampo A 
+   sell price: 35.75 € 
+   target price: 38.955 € 
+---------------------------------
+25.01.2021 08:00:53 - INFO : Script started
+25.01.2021 06:09:00 - INFO : Script started
+25.01.2021 06:09:42 - INFO : 
+Orion B 
+   sell price: 38.52 € 
+   target price: 55.58 € 
+---------------------------------
+25.01.2021 06:09:42 - INFO : 
+Konecranes 
+   sell price: 32.36 € 
+   target price: 34.374 € 
+---------------------------------
+25.01.2021 06:09:42 - INFO : 
+Nordea Bank 
+   sell price: 6.91 € 
+   target price: 10.22 € 
+---------------------------------
+25.01.2021 06:09:42 - INFO : 
+Outokumpu 
+   sell price: 4.114 € 
+   target price: 4.199 € 
+---------------------------------
+25.01.2021 06:09:42 - INFO : 
+Sampo A 
+   sell price: 35.69 € 
+   target price: 38.955 € 
+---------------------------------
+26.01.2021 04:58:08 - INFO : Script started
+26.01.2021 04:58:49 - INFO : 
+Orion B 
+   sell price: 38.68 € 
+   target price: 55.58 € 
+---------------------------------
+26.01.2021 04:58:49 - INFO : 
+Konecranes 
+   sell price: 32.04 € 
+   target price: 34.374 € 
+---------------------------------
+26.01.2021 04:58:49 - INFO : 
+Nordea Bank 
+   sell price: 6.919 € 
+   target price: 10.22 € 
+---------------------------------
+26.01.2021 04:58:49 - INFO : 
+Outokumpu 
+   sell price: 4.131 € 
+   target price: 4.199 € 
+---------------------------------
+26.01.2021 04:58:49 - INFO : 
+Sampo A 
+   sell price: 36.01 € 
+   target price: 38.955 € 
+---------------------------------
+27.01.2021 04:14:49 - INFO : Script started
+28.01.2021 08:49:55 - INFO : Script started
+28.01.2021 01:23:51 - INFO : Script started
+29.01.2021 09:06:28 - INFO : Script started
+29.01.2021 09:10:51 - INFO : Script started
+29.01.2021 09:13:35 - INFO : Script started
+29.01.2021 09:14:11 - INFO : 
+Orion B 
+   sell price: 38.6 € 
+   target price: 55.58 € 
+---------------------------------
+29.01.2021 09:14:11 - INFO : 
+Konecranes 
+   sell price: 30.2 € 
+   target price: 34.374 € 
+---------------------------------
+29.01.2021 09:14:11 - INFO : 
+Nordea Bank 
+   sell price: 6.784 € 
+   target price: 10.22 € 
+---------------------------------
+29.01.2021 09:14:11 - INFO : 
+Outokumpu 
+   sell price: 3.849 € 
+   target price: 4.199 € 
+---------------------------------
+29.01.2021 09:14:11 - INFO : 
+Sampo A 
+   sell price: 35.3 € 
+   target price: 38.955 € 
+---------------------------------
+29.01.2021 09:15:17 - INFO : Script started
+29.01.2021 09:15:52 - INFO : 
+Orion B 
+   sell price: 38.6 € 
+   target price: 55.58 € 
+---------------------------------
+29.01.2021 09:15:52 - INFO : 
+Konecranes 
+   sell price: 30.2 € 
+   target price: 34.374 € 
+---------------------------------
+29.01.2021 09:15:52 - INFO : 
+Nordea Bank 
+   sell price: 6.784 € 
+   target price: 10.22 € 
+---------------------------------
+29.01.2021 09:15:52 - INFO : 
+Outokumpu 
+   sell price: 3.849 € 
+   target price: 4.199 € 
+---------------------------------
+29.01.2021 09:15:52 - INFO : 
+Sampo A 
+   sell price: 35.3 € 
+   target price: 38.955 € 
+---------------------------------
