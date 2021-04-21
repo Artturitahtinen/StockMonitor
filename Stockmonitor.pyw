@@ -5,17 +5,15 @@ import Services.Logging_service as Logging_service
 
 stock_urls = {
     'orionB_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/ORNBV',
-    'konecranes_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/KCR',
     'nordeaBank_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/NDA%20FI',
     'outokumpu_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/OUT1V',
     'sampoA_url': 'https://www.kauppalehti.fi/porssi/porssikurssit/osake/SAMPO'
 }
 stocks = {
     'Orion B': {'sell_price': 0.0, 'target_price': 55.58, 'increase': 40, 'increased_over': False},
-    'Konecranes': {'sell_price': 0.0, 'target_price': 38.418, 'increase': 90, 'increased_over': False},
     'Nordea Bank': {'sell_price': 0.0, 'target_price': 10.22, 'increase': 50, 'increased_over': False},
-    'Outokumpu': {'sell_price': 0.0, 'target_price': 4.862, 'increase': 120, 'increased_over': False},
-    'Sampo A': {'sell_price': 0.0, 'target_price': 38.955, 'increase': 50, 'increased_over': False}    
+    'Outokumpu': {'sell_price': 0.0, 'target_price': 5.525, 'increase': 150, 'increased_over': False},
+    'Sampo A': {'sell_price': 0.0, 'target_price': 41.552, 'increase': 60, 'increased_over': False}    
 }
 
 sell_prices = []
